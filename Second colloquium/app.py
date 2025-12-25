@@ -34,8 +34,6 @@ def internal_error(error):
 
 if __name__ == '__main__':
     print("🚀 To-Do API запущен!")
-    print("🌐 Веб-интерфейс: http://127.0.0.1:5000/")
-    print("📡 API: http://127.0.0.1:5000/tasks")
     print("🛑 Остановить: Ctrl+C")
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
