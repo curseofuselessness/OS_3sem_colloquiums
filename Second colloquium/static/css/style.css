@@ -1,0 +1,32 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* если нужно по вертикали тоже */
+    min-height: 100vh; /* важно для центрирования по вертикали */
+}
+
+/* Компоненты */
+
+form-list-container
+
+.create-task-form {
+    display: inline-flex;
+    
+}
+
+.button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

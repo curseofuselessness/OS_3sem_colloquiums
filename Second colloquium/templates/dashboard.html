@@ -2,12 +2,17 @@
 <html>
 <head>
     <title>To-Do list</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 <body>
     <p>Попробуйте: <a href="/tasks">/tasks</a></p>
 
-    <div class = "create-task-form">
+    <div class = "form-list-container">
+        
+        <div class = "create-task-form">
 
         <h3>Добавьте задачу ↓</h3>
 
@@ -18,7 +23,10 @@
         <input type="date" class = "input-date">
 
 
+        </div>
+
     </div>
+    
 </body>
 
 </html>
