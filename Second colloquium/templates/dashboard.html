@@ -8,23 +8,29 @@
 </head>
 
 <body>
-    <p>Попробуйте: <a href="/tasks">/tasks</a></p>
 
-    <div class = "form-list-container">
-        
-        <div class = "create-task-form">
+    
+    <div class="form-list-container">
 
-        <h3>Добавьте задачу ↓</h3>
+        <form id="create-task-form">
+            <div class="create-task-form-div">
 
-        <button class="button">Добавить задачу</button>
+            <h3>Добавьте задачу ↓</h3>
 
-        <input type="text" placeholder="Название задачи" class = "input">
-        <textarea placeholder="Описание задачи"></textarea>
-        <input type="date" class = "input-date">
+            <button type="submit" class="button">Добавить задачу</button>
 
+            <input type="text" id="title" name="title" placeholder="Название задачи" class="input" required>
 
-        </div>
+            <textarea id="description" name="description" placeholder="Описание задачи" class="input"></textarea>
 
+            <input type="date">
+            </div>
+        </form>
+       
+        <!-- Сообщения будут здесь -->
+        <div id="message" style="margin-top: 20px; padding: 10px;"></div>
+
+        <script src="{{ url_for('static', filename='js/form.js') }}"></script>
     </div>
     
 </body>

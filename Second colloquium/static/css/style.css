@@ -11,13 +11,13 @@ body {
     align-items: center;
     justify-content: center; /* если нужно по вертикали тоже */
     min-height: 100vh; /* важно для центрирования по вертикали */
+    background-color: rgb(29, 29, 29);
 }
 
 /* Компоненты */
 
-form-list-container
 
-.create-task-form {
+.create-task-form-div {
     display: inline-flex;
     
 }
