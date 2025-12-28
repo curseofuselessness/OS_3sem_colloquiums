@@ -7,18 +7,57 @@
 
 /* Основные стили */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* если нужно по вертикали тоже */
-    min-height: 100vh; /* важно для центрирования по вертикали */
-    background-color: rgb(29, 29, 29);
+    
 }
 
 /* Компоненты */
 
+#main-container {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* если нужно по вертикали тоже */
+    gap: 4rem;
 
-.create-task-form-div {
-    display: inline-flex;
+    border: 5px solid rgb(0, 47, 255) !important; /* Яркая граница */
+    background-color: rgba(38, 0, 255, 0.1); /* Полупрозрачный фон */
+    
+}
+
+#message {
+    position: fixed;
+    top: 1rem;     
+    left: 1rem;    
+    
+
+    border: 5px solid red !important; /* Яркая граница */
+    background-color: rgba(255, 0, 0, 0.1); /* Полупрозрачный фон */
+}
+
+
+#create-task-form {
+    display: flex;
+    padding: 1rem;
+    
+
+    
+    border: 5px solid red !important; /* Яркая граница */
+    background-color: rgba(255, 0, 0, 0.1); /* Полупрозрачный фон */
+    
+}
+
+#tasks-list {
+    display: flex;
+    padding: 1rem;
+    
+
+    
+    border: 5px solid red !important; /* Яркая граница */
+    background-color: rgba(255, 0, 0, 0.1); /* Полупрозрачный фон */
+    
+}
+
+.task-card {
     
 }
 

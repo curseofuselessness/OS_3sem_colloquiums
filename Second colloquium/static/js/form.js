@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/sendtask', {
+            const response = await fetch('http://192.168.1.3:5000/sendtask', {
                 
                 method: 'POST',
                 headers: {

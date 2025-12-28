@@ -9,13 +9,15 @@
 
 <body>
 
+    <!-- Сообщения будут здесь -->
+    <div id="message"></div>
     
-    <div class="form-list-container">
+    <div id="main-container">
 
         <form id="create-task-form">
-            <div class="create-task-form-div">
+            
 
-            <h3>Добавьте задачу ↓</h3>
+            <h1>Добавьте задачу ↓</h1>
 
             <button type="submit" class="button">Добавить задачу</button>
 
@@ -24,11 +26,18 @@
             <textarea id="description" name="description" placeholder="Описание задачи" class="input"></textarea>
 
             <input type="date">
-            </div>
+            
         </form>
        
-        <!-- Сообщения будут здесь -->
-        <div id="message" style="margin-top: 20px; padding: 10px;"></div>
+        <div id="tasks-list">
+            <div class="task-card">
+                <h2 class="task-card__title">Покупка творог домой</h2>
+                <div class="task-card__content">
+                    <a>Перед работой жена сказала заехать за творогом, на ужин будут сырники</a>
+                </div>
+                
+            </div>
+        </div>
 
         <script src="{{ url_for('static', filename='js/form.js') }}"></script>
     </div>
