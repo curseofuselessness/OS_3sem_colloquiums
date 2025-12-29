@@ -30,13 +30,15 @@
         </form>
        
         <div id="tasks-list">
-            <div class="task-card">
-                <h2 class="task-card__title">Покупка творог домой</h2>
-                <div class="task-card__content">
-                    <a>Перед работой жена сказала заехать за творогом, на ужин будут сырники</a>
+            {% if tasks %}
+                {% for task in tasks %}
+                    {% include 'task.html'%}
+                {% endfor %}
+            {% else %}
+                <div class="empty-list-message">
+                    <p>Нет задач. Создайте первую!</p>
                 </div>
-                
-            </div>
+            {% endif %}
         </div>
 
         <script src="{{ url_for('static', filename='js/form.js') }}"></script>

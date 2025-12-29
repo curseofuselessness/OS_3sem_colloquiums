@@ -10,7 +10,7 @@ next_id = 1
 
 @app.route('/')
 def home():
-    return render_template('dashboard.html')
+    return render_template('dashboard.html', tasks=tasks)
 
 @app.route('/sendtask', methods = ['POST'])
 def create_task():
@@ -36,7 +36,14 @@ def create_task():
         tasks.append(new_task)
         next_id += 1
 
-        return jsonify(new_task), 201
+        html = render_template('task.html', task=new_task)
+
+        return jsonify({
+            'success': True,
+            'message': 'Задача создана',
+            'html': html,
+            'task': new_task
+        }), 201
 
     except Exception as e:
         # любые ошибки

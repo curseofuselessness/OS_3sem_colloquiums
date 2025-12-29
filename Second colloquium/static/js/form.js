@@ -25,9 +25,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify(formData)
             });
 
+            const result = await response.json();
+
             if (response.ok) {
-                const result = await response.json();
-                console.log('пошел');
+                const tasklist = document.getElementById('tasks-list');
+
+                const emptystate = document.querySelector('.empty-list-message')
+                if(emptystate) emptystate.remove();
+
+                tasklist.insertAdjacentHTML('afterbegin', result.html);
+                
+                document.getElementById('create-task-form').reset();
+
                 messageDiv.innerHTML = `<span style="color: green;">Задача создана успешно!</span><br>
                                         <small>ID: ${result.id}, Название: ${result.title}</small>`;
                 
