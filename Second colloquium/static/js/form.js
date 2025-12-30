@@ -1,60 +1,91 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('форма загружена!');
-
     const form = document.getElementById('create-task-form');
     const messageDiv = document.getElementById('message');
+
+    console.log('форма загружена!');
 
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
 
-        messageDiv.innerHTML = '<span style="color: blue;">⏳ Отправка...</span>';
         messageDiv.style.display = 'block';
 
+        const formData = getFormData(form);
+
+        const result = await sendTaskData(formData);
+
+        if(result) updateTaskList(result);
+    
+    })
+
+    function getFormData(form) {
         const formData = {
             title : document.getElementById('title').value.trim(),
             description: document.getElementById('description').value.trim(),
         }
+        return formData;
+    }
 
+    async function sendTaskData(formData) {
         try {
-            const response = await fetch('http://192.168.1.3:5000/sendtask', {
-                
+            const response = await fetch('/sendtask', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
 
-            const result = await response.json();
-
             if (response.ok) {
-                const tasklist = document.getElementById('tasks-list');
-
-                const emptystate = document.querySelector('.empty-list-message')
-                if(emptystate) emptystate.remove();
-
-                tasklist.insertAdjacentHTML('afterbegin', result.html);
-                
-                document.getElementById('create-task-form').reset();
-
-                messageDiv.innerHTML = `<span style="color: green;">Задача создана успешно!</span><br>
-                                        <small>ID: ${result.id}, Название: ${result.title}</small>`;
-                
+                showMessage(messageDiv, 'Задача создана успешно!', 'success');
+        
                 form.reset();
                 
                 setTimeout(() => {messageDiv.style.display = 'none';}, 5000);
+
+                return await response.json();
                 
             } else {
                 // Ошибка на сервере
                 const errorData = await response.json();
-                messageDiv.innerHTML = `<span style="color: red;">Ошибка ${response.status}: ${errorData.error || 'Неизвестная ошибка'}</span>`;
+                showMessage(messageDiv, 'Ошибка на сервере!', 'error');
             }
             
         } catch (error) {
             // Ошибка соединения с сервером
             console.error('Ошибка сети:', error);
-            messageDiv.innerHTML = `<span style="color: red;">Не удалось соединиться с сервером!</span><br>
-                                    <small>Убедитесь, что Flask сервер запущен на localhost:5000</small>`;
+            showMessage(messageDiv, 'Ошибка сети!', 'error')
         }
-    })
-})
+    }
+
+    function updateTaskList(result) {
+        const tasklist = document.getElementById('tasks-list');
+        const emptystate = document.querySelector('.empty-list-message');
+
+        if(emptystate) emptystate.remove();
+
+        const taskElement = createTaskObject(result);
+        tasklist.prepend(taskElement);
+    }
+
+    function createTaskObject(result) {
+        const div = document.createElement('div');
+
+        div.className = 'task-card';
+        div.innerHTML = result.html;
+
+        return div;
+    }
+
+    function showMessage(element, message, type = 'info') {
+        const colors = {
+            loading: 'blue',
+            success: 'green',
+            error: 'red',
+            info: 'gray'
+        };
+        
+        element.innerHTML = `<span style="color: ${colors[type] || 'black'}">${message}</span>`;
+        element.style.display = 'block';
+    }
+});
+
+
+
