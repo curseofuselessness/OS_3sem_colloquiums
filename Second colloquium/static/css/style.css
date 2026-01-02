@@ -7,7 +7,9 @@
 
 /* Основные стили */
 body {
-    
+    background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8150.jpg?semt=ais_hybrid&w=740&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Компоненты */
