@@ -38,13 +38,14 @@ body {
 #create-task-form {
     display: flex;
     padding: 1rem;
-    
+    justify-content: space-between;
 
     
     border: 5px solid red !important; /* Яркая граница */
     background-color: rgba(255, 0, 0, 0.1); /* Полупрозрачный фон */
     
 }
+
 
 #tasks-list {
     display: flex;
@@ -58,8 +59,21 @@ body {
     
 }
 
-.task-card {
+#title {
+    max-height: 37px;
+}
 
+#date {
+    max-height: 37px;
+}
+
+#submit-button {
+    max-height: 37px;
+}
+
+#description {
+    min-height: 37px;
+    max-width: 164px;
 }
 
 .button {
