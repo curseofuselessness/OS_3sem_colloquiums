@@ -27,7 +27,8 @@ def create_task():
             'title': data['title'].strip(),
             'description': data.get('description', '').strip(),
             'status': 'active',
-            'created_at': datetime.now()
+            'created_at': datetime.now(),
+            'deadline': data['date'].strip()
         }
 
         print(f"📝 Создана задача: {new_task}")

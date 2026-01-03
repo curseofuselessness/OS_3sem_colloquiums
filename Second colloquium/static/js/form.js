@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = {
             title : document.getElementById('title').value.trim(),
             description: document.getElementById('description').value.trim(),
+            date : document.getElementById('date').value.trim()
         }
         return formData;
     }
