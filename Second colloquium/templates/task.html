@@ -4,6 +4,11 @@
     
     <div class="task-card-content">
         <a>{{task.description}}</a>
+        {% if task.deadline %}
+            <p><strong>Дедлайн:</strong> {{task.deadline}}</p>
+        {% else %}
+            <p><strong>Дедлайн:</strong> Не установлен</p>
+        {% endif %}
     </div>
 
 </div>
