@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             info: 'gray'
         };
         
-        element.innerHTML = `<span style="color: ${colors[type] || 'black'}">${message}</span>`;
+        element.innerHTML = `<span style="background-color: ${colors[type] || 'white'}; border-radius: 10px;  padding: 10px;">${message}</span>`;
         element.style.display = 'block';
     }
 });
