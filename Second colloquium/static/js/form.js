@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createTaskObject(result) {
         const div = document.createElement('div');
 
-        div.className = 'task-card';
+        div.className = 'task-card-temp';
         div.innerHTML = result.html;
 
         return div;
