@@ -10,7 +10,13 @@ body {
     background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8150.jpg?semt=ais_hybrid&w=740&q=80');
     background-repeat: no-repeat;
     background-size: cover;
+
+    font-family: 'Inter';
+    src: url('Inter-Regular.woff2') format('woff2');
 }
+
+
+
 
 /* Компоненты */
 
@@ -40,25 +46,24 @@ body {
 #create-task-form {
     display: flex;
     padding: 1rem;
-    justify-content: space-between;
+    justify-content: space-around;
 
-    
-    border: 5px solid red !important; /* Яркая граница */
-    background-color: rgba(255, 0, 0, 0.1); /* Полупрозрачный фон */
-    
+    border-radius: 61px; 
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: linear-gradient(90deg, #fff 0%, #cef0ff 100%);
+
 }
 
 
 #tasks-list {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     
 
-    
-    border: 5px solid red !important; /* Яркая граница */
-    background-color: rgba(255, 0, 0, 0.1); /* Полупрозрачный фон */
-    
+    border-radius: 30px;
+    box-shadow: inset 0 4px 31px 0 rgba(0, 0, 0, 0.25);
+    background: linear-gradient(270deg, #fff 0%, #e0f6ff 100%);
 }
 
 #title {
@@ -69,20 +74,25 @@ body {
     max-height: 37px;
 }
 
-#submit-button {
-    max-height: 37px;
-}
-
 #description {
     min-height: 37px;
-    max-width: 164px;
+    width: 500px;
+    max-width: 900px;
+    border-radius: 10px;
 }
 
 .button {
     padding: 10px 20px;
+
     background: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
+    max-height: 37px;
+    font-weight: 600;
+}
+
+.input {
+    border-radius: 10px;
 }
