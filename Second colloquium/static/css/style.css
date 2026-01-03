@@ -1,0 +1,101 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили */
+body {
+    background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8150.jpg?semt=ais_hybrid&w=740&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: 'Inter';
+    src: url('Inter-Regular.woff2') format('woff2');
+}
+
+
+
+
+/* Компоненты */
+
+#main-container {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* если нужно по вертикали тоже */
+    gap: 4rem;
+}
+
+#message {
+    position: fixed;
+    top: 1rem;     
+    left: 1rem;    
+
+}
+
+
+#create-task-form {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+
+    border-radius: 61px; 
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: linear-gradient(90deg, #fff 0%, #cef0ff 100%);
+
+}
+
+
+#tasks-list {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    
+
+    border-radius: 30px;
+    box-shadow: inset 0 4px 31px 0 rgba(0, 0, 0, 0.25);
+    background: linear-gradient(270deg, #fff 0%, #e0f6ff 100%);
+}
+
+#title {
+    max-height: 37px;
+}
+
+#date {
+    max-height: 37px;
+}
+
+#description {
+    min-height: 37px;
+    width: 500px;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+.task-card {
+    padding: 1rem;
+    margin: 0px;
+
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #55bce8;
+    border-radius: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    max-height: 37px;
+    font-weight: 600;
+}
+
+.input {
+    border-radius: 10px;
+}

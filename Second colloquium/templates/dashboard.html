@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do list</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Сообщения будут здесь -->
+    <div id="message"></div>
+    
+    <div id="main-container">
+
+        <form id="create-task-form">
+            
+
+            <h1>Добавьте задачу:</h1>
+
+            
+
+            <input type="text" id="title" name="title" placeholder="Название задачи" class="input" required>
+
+            <textarea class="description" id="description" placeholder="Описание задачи" class="input"></textarea>
+
+            <input type="date" id="date">
+
+            <button type="submit" class="button" id="submit-button">Добавить задачу</button>
+            
+        </form>
+       
+        <div id="tasks-list">
+            {% if tasks %}
+                {% for task in tasks %}
+                    {% include 'task.html'%}
+                {% endfor %}
+            {% else %}
+                <div class="empty-list-message">
+                    <p>Нет задач. Создайте первую!</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+    </div>
+    
+</body>
+
+</html>
