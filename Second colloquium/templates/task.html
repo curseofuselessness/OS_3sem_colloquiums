@@ -1,4 +1,4 @@
-<div class="task-card">
+<div class="task-card" data-task-id="{{ task.id }}">
 
     <h2 class="task-card-title">{{task.title}}</h2>
     
@@ -14,7 +14,7 @@
                 <p><strong>Дедлайн:</strong> Не установлен</p>
             {% endif %}
 
-            <button class="button" id="delete-button">Удалить</button>
+            <button class="delete-button">Удалить</button>
 
         </div>
        
