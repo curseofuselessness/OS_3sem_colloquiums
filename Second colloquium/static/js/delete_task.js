@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             setTimeout(() => {
                 deleteTask(taskId, taskCard);
-                location.reload()
             }, 300);
+
+            
         });
     });
 });
@@ -32,6 +33,7 @@ async function deleteTask(taskId, taskCard) {
             const result = await response.json();
             console.log('✅ Задача удалена:', result);
             
+            location.reload()
             // Удаляем элемент из DOM
             taskCard.remove();
             
