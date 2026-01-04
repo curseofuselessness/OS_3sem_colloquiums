@@ -75,6 +75,11 @@ body {
     border-radius: 10px;
 }
 
+.deadline-and-delete-button-line {
+    display: flex;
+    justify-content: space-between;
+}
+
 .task-card {
     padding: 1rem;
     margin: 0px;
@@ -98,4 +103,16 @@ body {
 
 .input {
     border-radius: 10px;
+}
+
+.delete-button {
+    padding: 10px 20px;
+
+    background: #c03535;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    max-height: 37px;
+    font-weight: 600;
 }

@@ -50,6 +50,30 @@ def create_task():
         # любые ошибки
         return jsonify({"error": str(e)}), 500
 
+@app.route('/deletetask/<int:task_id>', methods = ['delete'])
+def delete_task(task_id):
+
+    global tasks 
+
+    task_index = None
+    for i, task in enumerate(tasks):
+        if task['id'] == task_id:
+            task_index = i
+            break
+
+    if task_index is None:
+            return jsonify({"error": f"Task with id {task_id} not found"}), 404
+    
+    deleted_task = tasks.pop(task_index)
+
+    print(f"🗑️ Удалена задача: {deleted_task}")
+    print(f"📊 Осталось задач: {len(tasks)}")
+
+    return jsonify({
+        "success": True,
+        "message": f"Task {task_id} deleted",
+        "task": deleted_task
+    })
 
 # ========== ОБРАБОТЧИКИ ОШИБОК ==========
 

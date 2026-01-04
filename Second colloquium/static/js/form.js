@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
                 form.reset();
                 
-                setTimeout(() => {messageDiv.style.display = 'none';}, 5000);
+                
+
+                setTimeout(() => {messageDiv.style.display = 'none'; location.reload();}, 5000);
+
+                
 
                 return await response.json();
                 
