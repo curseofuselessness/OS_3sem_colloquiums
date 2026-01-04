@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             setTimeout(() => {
                 deleteTask(taskId, taskCard);
+                location.reload()
             }, 300);
         });
     });
