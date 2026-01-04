@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 
 
-                setTimeout(() => {messageDiv.style.display = 'none'; location.reload();}, 5000);
-
+                setTimeout(() => {messageDiv.style.display = 'none';}, 5000);
+                location.reload();
                 
 
                 return await response.json();
